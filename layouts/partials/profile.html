@@ -1,0 +1,11 @@
+{{ with .Site.Params.profile -}}
+<section class="profile">
+  <h1 class="name">{{ .firstname }} <b>{{ .lastname }}</b></h1>
+  {{ with .title -}}
+  <h2 class="title">{{ . }}</h2>
+  {{- end }}
+  {{- with .bio -}}
+  <span class="bio">{{ . | markdownify }}</span>
+  {{- end }}
+</section>
+{{- end }}
